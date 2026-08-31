@@ -1,6 +1,6 @@
 <template>
-  <label data-sl-control="list">
-    <span data-sl-label v-if="label">{{ label }}</span>
+  <label data-sr-control="list">
+    <span data-sr-label v-if="label">{{ label }}</span>
     <select v-model="model" @change="handleChange">
       <option v-for="d in options" :value="toValue(d)" :key="toValue(d)">{{ toLabel(d) }}</option>
     </select>
@@ -26,11 +26,11 @@ function handleChange (e) {
 </script>
 
 <style scoped>
-[data-sl-control="list"] {
+[data-sr-control="list"] {
   position: relative;
 }
 
-[data-sl-control="list"] select {
+[data-sr-control="list"] select {
   flex-grow: 1;
   width: 100%;
   text-align: right;

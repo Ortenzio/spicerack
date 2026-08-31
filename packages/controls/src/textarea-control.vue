@@ -1,6 +1,6 @@
 <template>
-  <label data-sl-control="textarea">
-    <span v-if="label" data-sl-label>{{ label }}</span>
+  <label data-sr-control="textarea">
+    <span v-if="label" data-sr-label>{{ label }}</span>
     <textarea 
       v-model="model"
       :minlength 
@@ -30,18 +30,18 @@ function handleChange (e) {
 </script>
 
 <style scoped>
-[data-sl-control="textarea"] {
+[data-sr-control="textarea"] {
   position: relative;
   flex-direction: column;
   align-items: flex-start;
 }
 
-[data-sl-control="textarea"] [data-sl-label] {
+[data-sr-control="textarea"] [data-sr-label] {
   width: 100%;
   text-align: left;
 }
 
-[data-sl-control="textarea"] > textarea {
+[data-sr-control="textarea"] > textarea {
   background: none;
   border: none;
   width: 100%;
@@ -49,7 +49,7 @@ function handleChange (e) {
   outline: none;
 }
 
-[data-sl-control="textarea"] > textarea[data-resizable="true"] {
+[data-sr-control="textarea"] > textarea[data-resizable="true"] {
   resize: vertical;
 }
 </style>

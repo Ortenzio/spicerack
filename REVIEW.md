@@ -291,21 +291,21 @@ Bundling Vue is defensible because consumers should not need to install or under
 
 ### Context
 
-The current reset applies typography, margin, padding, and box sizing to `.sl-app` and every descendant. Low specificity makes overrides possible, but a third-party control still enters a broad undocumented reset environment.
+The current reset applies typography, margin, padding, and box sizing to `.sr-app` and every descendant. Low specificity makes overrides possible, but a third-party control still enters a broad undocumented reset environment.
 
 There are two different isolation goals:
 
 1. Prevent Spicerack styles from leaking into the host page.
 2. Prevent host-page styles from affecting Spicerack.
 
-The `.sl-`/`data-sl-*` namespace already handles the first goal reasonably well. Complete protection from incoming host styles requires a shadow root; selector scoping alone cannot guarantee it. Shadow DOM does not require Custom Elements, but it would complicate stylesheet injection, third-party styles, portals, and consumer theming, so it should only be added if real integrations demonstrate a need.
+The `.sr-`/`data-sr-*` namespace already handles the first goal reasonably well. Complete protection from incoming host styles requires a shadow root; selector scoping alone cannot guarantee it. Shadow DOM does not require Custom Elements, but it would complicate stylesheet injection, third-party styles, portals, and consumer theming, so it should only be added if real integrations demonstrate a need.
 
 ### Recommended first step
 
 Keep the light-DOM architecture and narrow the reset:
 
 ```css
-.sl-app {
+.sr-app {
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -313,12 +313,12 @@ Keep the light-DOM architecture and narrow the reset:
   font-weight: 400;
 }
 
-:where(.sl-app, .sl-app *) {
+:where(.sr-app, .sr-app *) {
   box-sizing: border-box;
 }
 ```
 
-Apply margin, padding, appearance, and typography resets only to owned selectors such as `.sl-app__button` and `[data-sl-control="text"] > input`.
+Apply margin, padding, appearance, and typography resets only to owned selectors such as `.sr-app__button` and `[data-sr-control="text"] > input`.
 
 CSS Cascade Layers may make ordering clearer, but they do not isolate styles from unlayered host CSS. An optional ShadowRoot mount can be explored later if host-site collisions are observed.
 
@@ -366,7 +366,7 @@ SID-004 should move this filtering into config normalization so metadata separat
 
 ### Context
 
-The panel now has a dynamic-viewport maximum height and scrolling, and public width/padding/radius tokens are applied. The remaining width issue is that `width: var(--sl-app-width)` plus `min-width: 14rem` is not capped to the viewport. On a 320px viewport, edge spacing and the minimum width can still force overflow depending on user token values.
+The panel now has a dynamic-viewport maximum height and scrolling, and public width/padding/radius tokens are applied. The remaining width issue is that `width: var(--sr-app-width)` plus `min-width: 14rem` is not capped to the viewport. On a 320px viewport, edge spacing and the minimum width can still force overflow depending on user token values.
 
 ### Scope
 
@@ -489,19 +489,19 @@ Spicerack and controls have working package-local lint scripts, and the current 
 
 ### Context
 
-The shell now consumes `appPadding`, `appRadius`, `appWidth`, and `controlGap`. However, the token map was renamed to emit `--sl-control-radius` and `--sl-control-gap` while two consumers still use the old `--sl-r-control` and `--sl-gap-control` names. As a result, the shared control radius and folder-content gap tokens are currently ineffective.
+The shell consumes `appPadding`, `appRadius`, `appWidth`, `controlRadius`, and `controlGap` through the `--sr-*` custom-property namespace.
 
 ### Scope
 
-- Change shared directives to `var(--sl-control-radius)`.
-- Change folder content to `var(--sl-control-gap)`.
+- Shared directives use `var(--sr-control-radius)`.
+- Folder content uses `var(--sr-control-gap)`.
 - Audit every token consumer after future token renames.
 
 ### Acceptance criteria
 
 - Every documented token has an observable effect.
-- The shell continues to use `--sl-app-padding`, `--sl-app-radius`, and `--sl-app-width`.
-- No source references the obsolete `--sl-r-control` or `--sl-gap-control` properties.
+- The shell continues to use `--sr-app-padding`, `--sr-app-radius`, and `--sr-app-width`.
+- No source references obsolete token properties.
 - Token override tests cover representative layout and color values.
 - Repeated control radii use the intended control token where appropriate.
 
@@ -617,7 +617,7 @@ The controls now use `defineModel()` without also declaring a misleading `value`
 
 ### Border shorthand was corrected
 
-The shell now uses `border: 1px solid var(--sl-border-app)`.
+The shell now uses `border: 1px solid var(--sr-border-app)`.
 
 ### Clickable non-interactive elements were replaced
 

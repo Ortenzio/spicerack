@@ -1,9 +1,9 @@
 <template>
-  <label data-sl-control="switch">
-    <span v-if="label" data-sl-label>{{ label }}</span>
-    <div data-sl-spacer />
+  <label data-sr-control="switch">
+    <span v-if="label" data-sr-label>{{ label }}</span>
+    <div data-sr-spacer />
     <input type="checkbox" v-model="model" @change="handleChange" />
-    <span class="sl-switch-label" />
+    <span class="sr-switch-label" />
   </label>
 </template>
 
@@ -21,11 +21,11 @@ function handleChange (e) {
 </script>
 
 <style scoped>
-[data-sl-control="switch"] {
+[data-sr-control="switch"] {
   position: relative;
 }
 
-[data-sl-control="switch"] input[type="checkbox"] {
+[data-sr-control="switch"] input[type="checkbox"] {
   position: absolute;
   left: 0;
   top: 0;
@@ -36,13 +36,13 @@ function handleChange (e) {
   opacity: 0;
 }
 
-[data-sl-control="switch"] .sl-switch-label {
+[data-sr-control="switch"] .sr-switch-label {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-[data-sl-control="switch"] .sl-switch-label:before {
+[data-sr-control="switch"] .sr-switch-label:before {
   content: '';
   width: 2rem;
   height: 1rem;
@@ -53,7 +53,7 @@ function handleChange (e) {
   transition: 0.2s ease-in;
 }
 
-[data-sl-control="switch"] .sl-switch-label:after {
+[data-sr-control="switch"] .sr-switch-label:after {
   content: '';
   position: absolute;
   width: 1rem;
@@ -70,15 +70,15 @@ function handleChange (e) {
   }
 }
 
-[data-sl-control="switch"]  input[type="checkbox"]:hover + .sl-switch-label:after  {
+[data-sr-control="switch"]  input[type="checkbox"]:hover + .sr-switch-label:after  {
   box-shadow: 0 2px 15px #0005, 0 3px 8px #0002;
 }
 
-[data-sl-control="switch"] input[type="checkbox"]:checked + .sl-switch-label:before {
-  background: var(--sl-bg-active);
+[data-sr-control="switch"] input[type="checkbox"]:checked + .sr-switch-label:before {
+  background: var(--sr-bg-active);
 }
 
-[data-sl-control="switch"]  input[type="checkbox"]:checked + .sl-switch-label:after {
+[data-sr-control="switch"]  input[type="checkbox"]:checked + .sr-switch-label:after {
   left: 1rem;
 }
 </style>

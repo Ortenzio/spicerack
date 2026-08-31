@@ -28,7 +28,7 @@ npm install @ozio/spicerack
 import { createSpicerack } from '@ozio/spicerack';
 ```
 
-Vue and the built-in controls are implementation dependencies of `@ozio/spicerack`; consumers do not import them directly.
+Vue and the built-in controls are bundled implementation details of `@ozio/spicerack`; consumers do not install or import them directly.
 
 ### jsDelivr (ESM)
 
@@ -219,7 +219,7 @@ Keys must be non-empty strings and unique across the entire config, including co
 | `position` | `'top-left' \| 'top-right' \| 'bottom-left' \| 'bottom-right'` | Persisted value or `'top-right'` | Initial panel corner. |
 | `title` | `string` | `''` | Header title. |
 
-An explicit option takes precedence over a persisted value. Panel state is currently stored in `localStorage` with the keys `sl:open`, `sl:theme`, and `sl:corner`.
+An explicit option takes precedence over a persisted value. Panel state is currently stored in `localStorage` with the keys `sr:open`, `sr:theme`, and `sr:corner`.
 
 ### Return object
 
@@ -343,8 +343,8 @@ Value controls receive `modelValue` and should emit `update:modelValue`. Vue's `
 
 ```vue
 <template>
-  <label data-sl-control="fancy">
-    <span v-if="label" data-sl-label>{{ label }}</span>
+  <label data-sr-control="fancy">
+    <span v-if="label" data-sr-label>{{ label }}</span>
     <input
       v-model="model"
       :disabled="disabled"
@@ -374,17 +374,17 @@ Action controls should emit `click` and do not need to define a model.
 
 Spicerack provides low-specificity structural styles for these attributes:
 
-- `[data-sl-control]`: root element for a control.
-- `[data-sl-label]`: shared label typography.
-- `[data-sl-spacer]`: flexible spacer used in horizontal controls.
+- `[data-sr-control]`: root element for a control.
+- `[data-sr-label]`: shared label typography.
+- `[data-sr-spacer]`: flexible spacer used in horizontal controls.
 
 Controls can use Spicerack's CSS custom properties, including:
 
-- `--sl-bg-app`, `--sl-bg-control`, `--sl-bg-accent`
-- `--sl-fg-app`, `--sl-fg-elm`, `--sl-fg-muted`
-- `--sl-border-app`, `--sl-border-active`
-- `--sl-fs-control`, `--sl-fs-input`
-- `--sl-control-radius`, `--sl-control-gap`
+- `--sr-bg-app`, `--sr-bg-control`, `--sr-bg-accent`
+- `--sr-fg-app`, `--sr-fg-elm`, `--sr-fg-muted`
+- `--sr-border-app`, `--sr-border-active`
+- `--sr-fs-control`, `--sr-fs-input`
+- `--sr-control-radius`, `--sr-control-gap`
 
 Treat these as part of the current authoring environment, but expect the design-token surface to evolve during beta releases.
 

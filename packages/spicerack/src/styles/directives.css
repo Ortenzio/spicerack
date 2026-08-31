@@ -1,13 +1,13 @@
-.sl-app {
+.sr-app {
   
-  & :where([data-sl-spacer]) {
+  & :where([data-sr-spacer]) {
     flex-grow: 1;
   }
 
-  & :where([data-sl-control]) {
+  & :where([data-sr-control]) {
     align-items: center;
-    background-color: var(--sl-bg-control);
-    color: var(--sl-fg-elm);
+    background-color: var(--sr-bg-control);
+    color: var(--sr-fg-elm);
     display: flex;
     flex-flow: row nowrap;
     flex-grow: 1;
@@ -16,12 +16,12 @@
     min-height: 2rem;
     padding: 0.25rem 0.5rem;
     position: relative;
-    border-radius: var(--sl-r-control);
+    border-radius: var(--sr-control-radius);
   }
 
-  & :where([data-sl-label]) {
-    color: var(--sl-fg-alt);
-    font-size: var(--sl-fs-control);
+  & :where([data-sr-label]) {
+    color: var(--sr-fg-alt);
+    font-size: var(--sr-fs-control);
     line-height: 1.5;
     text-align: left;
     flex-grow: 0;

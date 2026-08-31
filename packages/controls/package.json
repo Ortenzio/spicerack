@@ -7,10 +7,10 @@
   "private": true,
   "type": "module",
   "bugs": "https://github.com/ortenzio/spicerack/issues",
-  "homepage": "https://spicerack.ortenz.io/",
+  "homepage": "https://github.com/ortenzio/spicerack",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ortenzio/spicerack.git"
+    "url": "git+https://github.com/ortenzio/spicerack.git"
   },
   "exports": {
     ".": "./dist/index.js"

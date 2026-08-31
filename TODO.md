@@ -14,7 +14,7 @@
 - Undo / Redo
 - Arrays of controls (ex adding multiple filters)
 - optional command shortcuts to access controls
-- Scrollable area directive (`data-sl-scrollable`)
+- Scrollable area directive (`data-sr-scrollable`)
   - reusable internal overflow region for folders/tabs/etc.?
   - no idea wtf i originally meant by this
 - i18n support?

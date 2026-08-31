@@ -1,5 +1,5 @@
 <template>
-  <div data-sl-control="button">
+  <div data-sr-control="button">
     <button @click="handleClick">{{ label }}</button>
   </div>
 </template>
@@ -18,19 +18,19 @@ function handleClick (e) {
 
 
 <style scoped>
-[data-sl-control="button"] {
+[data-sr-control="button"] {
   width: 100%;
   padding: 0;
 }
 
-[data-sl-control="button"] > button {
+[data-sr-control="button"] > button {
   appearance: none;
   border: none;
   text-align: center;
   width: 100%;
   cursor: pointer;
-  background: var(--sl-bg-accent);
-  color: var(--sl-fg-active);
+  background: var(--sr-bg-accent);
+  color: var(--sr-fg-active);
   padding: 0.5rem;
   border-radius: 0.25rem;
 
@@ -39,7 +39,7 @@ function handleClick (e) {
   }
 
   &:hover {
-    background: var(--sl-bg-accent-hover);
+    background: var(--sr-bg-accent-hover);
   }
 }
 </style>

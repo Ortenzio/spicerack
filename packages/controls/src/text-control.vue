@@ -1,6 +1,6 @@
 <template>
-  <label data-sl-control="text">
-    <span v-if="label" data-sl-label>{{ label }}</span>
+  <label data-sr-control="text">
+    <span v-if="label" data-sr-label>{{ label }}</span>
     <input type="text" v-model="model" :minlength :maxlength @change="handleChange" />
   </label>
 </template>
@@ -21,16 +21,16 @@ function handleChange (e) {
 </script>
 
 <style scoped>
-[data-sl-control="text"] {
+[data-sr-control="text"] {
   position: relative;
 }
 
-[data-sl-control="text"] [data-sl-label] {
+[data-sr-control="text"] [data-sr-label] {
   left: 0;
   z-index: 5;
 }
 
-[data-sl-control="text"] > input {
+[data-sr-control="text"] > input {
   background: none;
   border: none;
   outline: none;

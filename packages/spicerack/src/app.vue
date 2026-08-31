@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="sl-app" 
+    class="sr-app" 
     role="dialog"
     ref="el"
     :data-version="version"
@@ -9,27 +9,27 @@
     :data-is-open="isOpen"
   >
 
-    <header class="sl-app__header">
-      <button class="sl-app__button" :title="TITLE_LOGO" :aria-expanded="isOpen" aria-controls="sl-app-controls" @click="handleToggleOpen">
-        <icon-logo class="sl-app__svg" aria-hidden />
+    <header class="sr-app__header">
+      <button class="sr-app__button" :title="TITLE_LOGO" :aria-expanded="isOpen" aria-controls="sr-app-controls" @click="handleToggleOpen">
+        <icon-logo class="sr-app__svg" aria-hidden />
       </button>
 
-      <span v-if="title" class="sl-app__title" v-text="`${title}`"/>
+      <span v-if="title" class="sr-app__title" v-text="`${title}`"/>
 
-      <button class="sl-app__button" @click="handleExportConfig" :title="TITLE_COPY">
-        <icon-copy class="sl-app__svg" aria-hidden />
+      <button class="sr-app__button" @click="handleExportConfig" :title="TITLE_COPY">
+        <icon-copy class="sr-app__svg" aria-hidden />
       </button>
 
-      <button class="sl-app__button" @click="handleChangePosition" :title="TITLE_CORNER" >
-        <icon-corners class="sl-app__svg" aria-hidden />
+      <button class="sr-app__button" @click="handleChangePosition" :title="TITLE_CORNER" >
+        <icon-corners class="sr-app__svg" aria-hidden />
       </button>
 
-      <button class="sl-app__button" @click="handleChangeTheme" :title="TITLE_THEME" >
-        <icon-theme class="sl-app__svg" aria-hidden />
+      <button class="sr-app__button" @click="handleChangeTheme" :title="TITLE_THEME" >
+        <icon-theme class="sr-app__svg" aria-hidden />
       </button>
     </header>
 
-    <section class="sl-app__controls" id="sl-app-controls" v-show="isOpen">
+    <section class="sr-app__controls" id="sr-app-controls" v-show="isOpen">
       <template v-for="d in config">
         <component v-if="model[d.key]" :is="getControl(d)" :key="d.key" v-model="model[d.key].value" v-bind="getControlProps(d)" />
         <component v-else-if="getItemType(d) === 'folder'" :is="getControl(d)" v-bind="getControlProps(d)">
@@ -101,17 +101,17 @@ function getControlProps (control) {
 
 function handleToggleOpen (e) {
   isOpen.value = !isOpen.value;
-  localStorage.setItem('sl:open', isOpen.value);
+  localStorage.setItem('sr:open', isOpen.value);
 }
 
 function handleChangePosition (e) {
   corner.value = NEXT_POSITION[corner.value];
-  localStorage.setItem('sl:corner', corner.value);
+  localStorage.setItem('sr:corner', corner.value);
 }
 
 function handleChangeTheme (e) {
   theme.value = NEXT_THEME[theme.value];
-  localStorage.setItem('sl:theme', theme.value);
+  localStorage.setItem('sr:theme', theme.value);
 }
 
 function handleExportConfig (e) {
@@ -124,51 +124,51 @@ onMounted(() => {
 </script>
 
 <style>
-.sl-app {
-  background: var(--sl-bg-app);
-  border-radius: var(--sl-app-radius);
-  border: 1px solid var(--sl-border-app);
-  box-shadow: var(--sl-shadow);
-  color: var(--sl-fg-app);
+.sr-app {
+  background: var(--sr-bg-app);
+  border-radius: var(--sr-app-radius);
+  border: 1px solid var(--sr-border-app);
+  box-shadow: var(--sr-shadow);
+  color: var(--sr-fg-app);
   display: flex;
   flex-direction: column;
-  gap: var(--sl-control-gap);
-  max-height: calc(100dvh - (var(--sl-edge-spacing) * 2));
+  gap: var(--sr-control-gap);
+  max-height: calc(100dvh - (var(--sr-edge-spacing) * 2));
   min-width: 14rem;
   overflow: scroll;
-  padding: var(--sl-app-padding);
+  padding: var(--sr-app-padding);
   position: fixed;
-  width: var(--sl-app-width);
-  z-index: var(--sl-z);
+  width: var(--sr-app-width);
+  z-index: var(--sr-z);
 }
 
-.sl-app[data-position="top-right"] {
-  right: var(--sl-edge-spacing);
-  top: var(--sl-edge-spacing);
+.sr-app[data-position="top-right"] {
+  right: var(--sr-edge-spacing);
+  top: var(--sr-edge-spacing);
 }
 
-.sl-app[data-position="top-left"] {
-  left: var(--sl-edge-spacing);
-  top: var(--sl-edge-spacing);
+.sr-app[data-position="top-left"] {
+  left: var(--sr-edge-spacing);
+  top: var(--sr-edge-spacing);
 }
 
-.sl-app[data-position="bottom-right"] {
-  bottom: var(--sl-edge-spacing);
-  right: var(--sl-edge-spacing);
+.sr-app[data-position="bottom-right"] {
+  bottom: var(--sr-edge-spacing);
+  right: var(--sr-edge-spacing);
 }
 
-.sl-app[data-position="bottom-left"] {
-  bottom: var(--sl-edge-spacing);
-  left: var(--sl-edge-spacing);
+.sr-app[data-position="bottom-left"] {
+  bottom: var(--sr-edge-spacing);
+  left: var(--sr-edge-spacing);
 }
 
-.sl-app__controls {
+.sr-app__controls {
   display: flex;
   flex-direction: column;
-  gap: var(--sl-control-gap);
+  gap: var(--sr-control-gap);
 }
 
-.sl-app__header {
+.sr-app__header {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -177,22 +177,22 @@ onMounted(() => {
   user-select: none;
 }
 
-.sl-app__title {
+.sr-app__title {
   flex-grow: 1;
-  font-size: var(--sl-fs-title);
+  font-size: var(--sr-fs-title);
   font-weight: 600;
   letter-spacing: 0;
   text-align: left;
 }
 
-.sl-app__button {
+.sr-app__button {
   align-items: center;
   appearance: none;
   aspect-ratio: 1;
-  background: var(--sl-bg-app);
+  background: var(--sr-bg-app);
   border-radius: 0.25rem;
   border: none;
-  color: var(--sl-fg-app);
+  color: var(--sr-fg-app);
   cursor: pointer;
   display: flex;
   height: 1.5rem;
@@ -200,11 +200,11 @@ onMounted(() => {
   width: 1.5rem;
 
   &:hover {
-    background-color: var(--sl-bg-alt);
+    background-color: var(--sr-bg-alt);
   }
 }
 
-.sl-app__svg {
+.sr-app__svg {
   height: 15px;
   width: 15px;
 }

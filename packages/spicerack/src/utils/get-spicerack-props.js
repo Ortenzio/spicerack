@@ -30,23 +30,23 @@ export function getSpicerackProps ({
 /**
  * Storage precidence
  * 1 - options.open is true -> true
- * 2 - localStorage key 'sl:open', does not exist -> true
- * 3 - localStorage key 'sl:open' is strictly equal to 'true' -> true
+ * 2 - localStorage key 'sr:open', does not exist -> true
+ * 3 - localStorage key 'sr:open' is strictly equal to 'true' -> true
  * 4 - otherwise, spiceracks is created in the closed state
  *
  * @param {boolean} isOpenOption
  * @returns {boolean} final setting
  */
 function getIsOpenSetting (isOpenOption) {
-  const storageOpen = localStorage.getItem('sl:open');
-  const open = isOpenOption ?? (storageOpen === null ? true : localStorage.getItem('sl:open') === 'true');
+  const storageOpen = localStorage.getItem('sr:open');
+  const open = isOpenOption ?? (storageOpen === null ? true : localStorage.getItem('sr:open') === 'true');
   return open;
 }
 
 function getPositionSetting (positionOption) {
-  return positionOption ?? localStorage.getItem('sl:corner') ?? POSITIONS.TOP_RIGHT;
+  return positionOption ?? localStorage.getItem('sr:corner') ?? POSITIONS.TOP_RIGHT;
 }
 
 function getThemeSetting (themeOption) {
-  return themeOption ?? localStorage.getItem('sl:theme') ?? THEMES.DARK;
+  return themeOption ?? localStorage.getItem('sr:theme') ?? THEMES.DARK;
 }

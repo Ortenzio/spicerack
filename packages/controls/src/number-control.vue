@@ -1,6 +1,6 @@
 <template>
-  <label data-sl-control="number">
-    <span v-if="label" data-sl-label>{{ label }}</span>
+  <label data-sr-control="number">
+    <span v-if="label" data-sr-label>{{ label }}</span>
     <input type="number" v-model="model" :min :max @change="handleChange" />
   </label>
 </template>
@@ -21,11 +21,11 @@ function handleChange (e) {
 </script>
 
 <style scoped>
-[data-sl-control="number"] {
+[data-sr-control="number"] {
   position: relative;
 }
 
-[data-sl-control="number"] > input {
+[data-sr-control="number"] > input {
   background: none;
   border: none;
   outline: none;

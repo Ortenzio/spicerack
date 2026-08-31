@@ -1,8 +1,8 @@
 <template>
-  <label data-sl-control="range">
+  <label data-sr-control="range">
     <input type="range" v-model.number="model" :min :max :step @input="handleInput" @change="handleChange" />
-    <span class="sl-range-label" v-if="label" data-sl-label>{{ label }}</span>
-    <span class="sl-range-value">{{ model }}</span>
+    <span class="sr-range-label" v-if="label" data-sr-label>{{ label }}</span>
+    <span class="sr-range-value">{{ model }}</span>
   </label>
 </template>
 
@@ -27,11 +27,11 @@ function handleInput (e) {
 </script>
 
 <style scoped>
-[data-sl-control="range"] {
+[data-sr-control="range"] {
   position: relative;
 }
 
-[data-sl-control="range"] > .sl-range-label {
+[data-sr-control="range"] > .sr-range-label {
   position: absolute;
   left: 0.25rem;
   z-index: 5;
@@ -39,16 +39,16 @@ function handleInput (e) {
   pointer-events: none;
 }
 
-[data-sl-control="range"] > .sl-range-value {
+[data-sr-control="range"] > .sr-range-value {
   position: absolute;
   right: 0.5rem;
   z-index: 5;
   user-select: none;
   pointer-events: none;
-  font-size: var(--sl-fs-input);
+  font-size: var(--sr-fs-input);
 }
 
-[data-sl-control="range"] > input[type="range"] {
+[data-sr-control="range"] > input[type="range"] {
   width: 100%;
   -webkit-appearance: none;
   appearance: none;
@@ -56,10 +56,10 @@ function handleInput (e) {
   cursor: pointer;
 }
 
-[data-sl-control="range"] input[type="range"]::-webkit-slider-thumb {
+[data-sr-control="range"] input[type="range"]::-webkit-slider-thumb {
    -webkit-appearance: none; /* Override default look */
    appearance: none;
-   background-color: var(--sl-bg-alt);
+   background-color: var(--sr-bg-alt);
    height: 1.5rem;
    width: 0.25rem;
    border-radius: 0.25rem;

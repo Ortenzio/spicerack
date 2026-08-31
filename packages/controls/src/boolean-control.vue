@@ -1,7 +1,7 @@
 <template>
-  <label data-sl-control="boolean">
-    <span data-sl-label>{{ label }}</span>
-    <div data-sl-spacer />
+  <label data-sr-control="boolean">
+    <span data-sr-label>{{ label }}</span>
+    <div data-sr-spacer />
     <input type="checkbox" v-model="model" @change="handleChange" />
   </label>
 </template>
@@ -20,7 +20,7 @@ function handleChange (e) {
 </script>
 
 <style scoped>
-[data-sl-control="boolean"] {
+[data-sr-control="boolean"] {
   position: relative;
 }
 </style>

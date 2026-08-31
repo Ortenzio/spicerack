@@ -1,9 +1,9 @@
 <template>
-  <div data-sl-control="divider" />
+  <div data-sr-control="divider" />
 </template>
 
 <style scoped>
-[data-sl-control="divider"] {
+[data-sr-control="divider"] {
   height: 0.25rem;
   min-height: 0.25rem;
   width: 100%;
