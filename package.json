@@ -1,0 +1,11 @@
+{
+  "name": "spicerack",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @ozio/spicerack",
+    "build": "npm run build --workspaces --if-present"
+  }
+}

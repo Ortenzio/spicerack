@@ -1,0 +1,175 @@
+# Todo
+
+### UI
+
+- Callbacks (change, edit start, edit end, click)
+- [Conditional Modules](https://ryankiley.github.io/tweakit/panel-api.html#ex-conditional)
+- Copy invididual values
+- Debounce / Throttle
+- Dragging
+- Joysticks
+- control Lock
+- Search
+- Tooltips
+- Undo / Redo
+- Arrays of controls (ex adding multiple filters)
+- optional command shortcuts to access controls
+- Scrollable area directive (`data-sl-scrollable`)
+  - reusable internal overflow region for folders/tabs/etc.?
+  - no idea wtf i originally meant by this
+- i18n support?
+
+### Controls
+
+- 3D Model viewer
+- Ascii Art
+- Autocomplete
+- [Curve Editor](https://observablehq.com/@nhogs/easing-graphs-editor)
+- [Binary Input](https://observablehq.com/@rreusser/binary-Input)
+- Button Grid
+- Button Group
+- Calendar
+- Camera (live webcam)
+- [Camera Kit](https://github.com/tweakpane/plugin-camerakit)
+- Carousel
+- [Checkbox](https://ryankiley.github.io/tweakit/text-and-choices.html#ex-checkbox)
+- [Color Schemes / Palette](https://github.com/brunoimbrizi/tweakpane-plugin-chromatic)
+- Credit Card Number
+- Currency
+- [Current location Button](https://observablehq.com/@roelandschoukens/inputs#cell-1068)
+- [Curve / Easing](https://observablehq.com/@nhogs/easing-graphs-editor)
+- Date / Time
+  - [Date Range](https://observablehq.com/@roelandschoukens/inputs#cell-38)
+- [Day of Year](https://observablehq.com/@roelandschoukens/inputs#cell-161)
+- Dither patterns
+- Double Range (extent) slider (interval slider?)
+- Drawing pad
+- Emoji Selector
+- File uploader
+- Binary Flags
+- Folders
+- Fraction
+- Guid Generator
+- [Gradient/Mapper](https://ryankiley.github.io/tweakit/color-and-gradient.html#ex-gradient)
+- [Gyro](https://github.com/0b5vr/tweakpane-plugin-rotation)
+- HTML Element picker
+- Image Uploader
+- Interval
+  - range / with greater than or less than locks 
+- JSON
+- Katex
+- Mapper (blender Math node?)
+- Maps / Pin
+  - Lat / Lon
+  - Globe (https://observablehq.com/@jashkenas/inputs#worldMapCoordinatesDemo)
+  - USA Map (https://observablehq.com/@jashkenas/inputs#usaMapCoordinatesDemo)
+  - Zipcode
+- Mayan Calendar
+- Media Controls
+- Moon phases
+- [Number field](https://coss.com/ui/docs/components/number-field)
+- Number Keypad (telephone)
+- Number knob
+- Noise Function (with seed)
+- On Screen Keyboard
+- Option Wheel
+- OTP
+- [Pagination](https://shuffle.dev/components/all/all/paginations)
+- Password
+- Periodic Table
+- Piano Keyboard
+- Phone Number
+- Plotter (click on 2d area to add multiple points)
+- Point controller
+- Progress bar
+- QR Code
+- [Radio grid](https://ryankiley.github.io/tweakit/text-and-choices.html#ex-radiogrid)
+- Random
+- Regex
+- Rotate Wheel
+- Ruler?
+- Search
+- Select
+  - with opt groups
+  - with search
+  - combo / multiselect
+  - menu list
+- Select Flat (https://observablehq.com/@fil/selectflat)
+- [Signature](https://vant.pro/vant/mobile#/en-US/signature)
+  - handwriting to text
+- Slide to lock
+- Sortable list
+- Stepper (Number w/ + and - )
+  - Useful for instances where exact values are not as important (like zoom, or increasing decreasing font size)
+- Stop watch / Lap counter
+- Tabs
+- [Tag Input](https://element-plus.org/en-US/component/input-tag)
+- [Ternary Slider](https://observablehq.com/@yurivish/ternary-slider)
+- [Thumbnail List](https://github.com/donmccurdy/tweakpane-plugin-thumbnail-list)
+- Time
+- Timeout / Interval with start / stop
+- Time zone
+- Todo list
+- [Toggle group](https://ui.shadcn.com/docs/components/base/toggle-group)
+- Touch id?
+- [Unbounded Number](https://ryankiley.github.io/tweakit/numbers.html)
+- Vector Controller (x,y,z,w)
+  - [Vec 2](https://leva.pmnd.rs/?path=/story/inputs-vector--vector-2)
+- [Vertical Ranges](https://codepen.io/bgebelein/pen/wvYeapy)
+  - EQ Panel
+
+### Monitors
+- Heatmap
+- Histogram
+- JSON (with syntax highlighting)
+- Lightboard (https://uibrary.com/components/cult-ui/lightboard)
+- Logger
+- Plot / graph
+- [Profiler / Flame Chart](https://github.com/0b5vr/tweakpane-plugin-profiler)
+- Sparkline
+- Table
+- Time series / interval
+- Tree
+- Waffle chart
+
+
+### Resources
+
+- https://cyrilf.github.io/vue-dat-gui/
+- https://github.com/alancnet/dat-gui-vue
+- https://lil-gui.georgealways.com/
+- https://leva.pmnd.rs/?path=/story/inputs-string--simple
+- https://tweakpane.github.io/docs/
+- https://github.com/freeman-lab/control-panel
+- https://github.com/automat/controlkit.js
+- https://github.com/colejd/guify
+- https://github.com/wearekuva/oui
+- https://www.figma.com/community/file/1324202557355874089/tweakpane-design-kit
+- https://observablehq.com/documentation/inputs/overview?collection=%40observablehq%2Finputs
+- https://observablehq.com/@mootari/2d-slider
+- https://ryankiley.github.io/tweakit/
+- https://observablehq.com/@rreusser/fine-range
+- https://observablehq.com/@trebor/snapping-histogram-slider
+- https://www.figma.com/community/file/1203061493325953101/shadcn-ui-design-system
+- https://joshpuckett.me/dialkit
+- https://joshpuckett.me/pasito
+- https://chakra-ui.com/docs/components/segmented-control
+- https://vant.pro/vant/#/en-US/button
+- https://21st.dev/community/components
+- https://www.neobrutalism.dev
+
+## UI Inspiration
+- https://ui.shadcn.com
+- https://uiverse.io/3bdel3ziz-T/lucky-bullfrog-15
+- https://uiverse.io/ratue1256/thin-mole-90
+- https://uiverse.io/andrew-demchenk0/nasty-frog-73
+- https://uiverse.io/andrew-demchenk0/stupid-seahorse-9
+- https://uiverse.io/Voxybuns/horrible-shrimp-47
+- https://uiverse.io/Admin12121/cold-bobcat-20
+- https://uiverse.io/_7948/kind-lizard-11
+- https://uiverse.io/chase2k25/odd-elephant-16
+- https://www.neobrutalism.dev/docs/accordion
+- https://21st.dev/@saurabh10102/components/be-ui-range-slider
+- https://open-ui.org/
+- https://github.com/raysan5/raygui
+- https://vue-bits.dev

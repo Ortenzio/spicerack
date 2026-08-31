@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "lib": ["DOM", "ESNext"],
+    "module": "esnext",
+    "strictNullChecks": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": [
+      "vite/client"
+    ]
+  },
+  "exclude": [
+    "node_modules", 
+    "dist", 
+    ".gitops", 
+    ".vscode",
+    "public",
+    "docs"
+  ]
+}

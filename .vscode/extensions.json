@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "irongeek.vscode-env",
+    "christian-kohler.npm-intellisense"
+  ]
+}

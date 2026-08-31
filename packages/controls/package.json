@@ -1,0 +1,36 @@
+{
+  "name": "@ozio/spicerack-controls",
+  "author": "Nicholas Ortenzio <nicholas.ortenzio@gmail.com>",
+  "description": "Default controls for Spicerack. Internal use only.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "bugs": "https://github.com/ortenzio/spicerack/issues",
+  "homepage": "https://spicerack.ortenz.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ortenzio/spicerack.git"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "lint": "oxlint"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.40"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "oxlint": "^1.79.0",
+    "vite": "^8.2.0",
+    "vite-plugin-css-injected-by-js": "^5.0.2"
+  }
+}
