@@ -28,7 +28,7 @@ export function getSpicerackProps ({
 
 
 /**
- * Storage precidence
+ * Storage precedence
  * 1 - options.open is true -> true
  * 2 - localStorage key 'sr:open', does not exist -> true
  * 3 - localStorage key 'sr:open' is strictly equal to 'true' -> true
@@ -39,7 +39,7 @@ export function getSpicerackProps ({
  */
 function getIsOpenSetting (isOpenOption) {
   const storageOpen = localStorage.getItem('sr:open');
-  const open = isOpenOption ?? (storageOpen === null ? true : localStorage.getItem('sr:open') === 'true');
+  const open = isOpenOption ?? (storageOpen === null ? true : storageOpen === 'true');
   return open;
 }
 
