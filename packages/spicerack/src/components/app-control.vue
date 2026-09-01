@@ -16,7 +16,7 @@
 <script setup>
 import { RESERVED_PROPS } from '@/constants/reserved-props';
 
-import { getItemType } from '@/utils/get-item-type';
+import { getControlType } from '@/utils/get-control-type';
 import { omitProps } from '@/utils/omit-props';
 
 const props = defineProps({
@@ -27,6 +27,6 @@ const props = defineProps({
 
 const hasConfig = Object.hasOwn(props.item, 'config');
 const hasModel = Object.hasOwn(props.model, props.item.key);
-const is = props.registry.get(getItemType(props.item));
+const is = props.registry.get(getControlType(props.item));
 const itemProps = omitProps(props.item, RESERVED_PROPS);
 </script>
