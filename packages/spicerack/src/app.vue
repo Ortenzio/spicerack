@@ -31,13 +31,15 @@
 
     <section class="sr-app__controls" id="sr-app-controls" v-show="isOpen">
       <template v-for="d in config">
-        <component v-if="model[d.key]" :is="getControl(d)" :key="d.key" v-model="model[d.key].value" v-bind="getControlProps(d)" />
+        <component v-if="model[d.key]"  :is="getControl(d)"  :key="d.key"  v-model="model[d.key].value"  v-bind="getControlProps(d)" />
+
         <component v-else-if="getItemType(d) === 'folder'" :is="getControl(d)" v-bind="getControlProps(d)">
           <template v-for="e in d.config">
             <component v-if="model[e.key]" :is="getControl(e)" :key="e.key" v-model="model[e.key].value" v-bind="getControlProps(e)" />
             <component v-else :is="getControl(e)" v-bind="getControlProps(e)" />
           </template>
         </component>
+
         <component v-else :is="getControl(d)" :key="`drone_${d.key}`" v-bind="getControlProps(d)" />
       </template>
     </section>
@@ -97,6 +99,22 @@ function getControl (control) {
 
 function getControlProps (control) {
   return omitProps(control, RESERVED_PROPS);
+}
+
+function handleEvent (type, item, value, event) {
+  const handler = item[`on${capitalize(type)}`];
+
+  if (!handler || typeof handler !== "function") {
+    return;
+  }
+
+  handler({
+    type,
+    key: item.key,
+    value,
+    event,
+    model
+  });
 }
 
 function handleToggleOpen (e) {
