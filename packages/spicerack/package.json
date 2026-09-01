@@ -14,7 +14,8 @@
     "panels",
     "controls",
     "inputs",
-    "bindings"
+    "bindings",
+    "gui"
   ],
   "repository": {
     "type": "git",
