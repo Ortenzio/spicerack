@@ -4,6 +4,11 @@
     flex-grow: 1;
   }
 
+  & :where([data-sr-icon]) {
+    height: 15px;
+    width: 15px;
+  }
+
   & :where([data-sr-control]) {
     align-items: center;
     background-color: var(--sr-bg-control);
