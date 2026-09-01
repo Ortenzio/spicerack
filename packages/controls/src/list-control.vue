@@ -38,5 +38,6 @@ function handleChange (e) {
   height: 100%;
   cursor: pointer;
   outline: none;
+  background-color: transparent;
 }
 </style>

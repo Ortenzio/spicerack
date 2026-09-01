@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev -w @ozio/spicerack",
+    "dev": "npm run dev --workspaces --if-present",
     "build": "npm run build --workspaces --if-present"
   },
   "devDependencies": {

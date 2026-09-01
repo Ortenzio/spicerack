@@ -1,10 +1,10 @@
-const modellessTypes = ['button', 'folder', 'tabs'];
+const modellessTypes = new Set(['button', 'folder', 'tabs']);
 
 /**
- * 
- * @param {import("../types/spicerack.d.ts").SpicerackConfig} item 
+ *
+ * @param {import("../types/spicerack.d.ts").SpicerackConfig} item
  * @returns {boolean}
  */
 export function hasModel (item) {
-  return modellessTypes.includes(item.type);
+  return modellessTypes.has(item.type);
 }

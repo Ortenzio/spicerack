@@ -10,40 +10,19 @@
     :data-is-open="isOpen"
   >
 
-    <header class="sr-app__header">
-      <button class="sr-app__button" :title="TITLE_LOGO" :aria-expanded="isOpen" aria-controls="sr-app-controls" @click="handleToggleOpen">
-        <icon-logo class="sr-app__svg" aria-hidden />
-      </button>
+    <app-header
+      :open="isOpen"
+      :show-copy-toast
+      :title
+      controls="sr-app-controls"
+      @collapse="handleToggleOpen"
+      @copy="handleExportConfig"
+      @position="handleChangePosition"
+      @theme="handleChangeTheme"
+    />
 
-      <span v-if="title" class="sr-app__title" v-text="`${title}`"/>
-
-      <button class="sr-app__button" @click="handleExportConfig" :title="TITLE_COPY">
-        <icon-check v-if="showCopyToast" class="sr-app__icon-check" aria-hidden />
-        <icon-copy v-else class="sr-app__icon-copy" aria-hidden />
-      </button>
-
-      <button class="sr-app__button" @click="handleChangePosition" :title="TITLE_CORNER" >
-        <icon-corners class="sr-app__svg" aria-hidden />
-      </button>
-
-      <button class="sr-app__button" @click="handleChangeTheme" :title="TITLE_THEME" >
-        <icon-theme class="sr-app__svg" aria-hidden />
-      </button>
-    </header>
-
-    <section class="sr-app__controls" id="sr-app-controls" v-show="isOpen">
-      <template v-for="d in config">
-        <component v-if="model[d.key]"  :is="getControl(d)"  :key="d.key"  v-model="model[d.key].value"  v-bind="getControlProps(d)" />
-
-        <component v-else-if="getItemType(d) === 'folder'" :is="getControl(d)" v-bind="getControlProps(d)">
-          <template v-for="e in d.config">
-            <component v-if="model[e.key]" :is="getControl(e)" :key="e.key" v-model="model[e.key].value" v-bind="getControlProps(e)" />
-            <component v-else :is="getControl(e)" v-bind="getControlProps(e)" />
-          </template>
-        </component>
-
-        <component v-else :is="getControl(d)" :key="`drone_${d.key}`" v-bind="getControlProps(d)" />
-      </template>
+    <section class="sr-app__controls" id="sr-app-controls" v-show="isOpen">  
+      <app-control v-for="d in config" :key="d.key ?? d.type" :item="d" :model  :registry />
     </section>
 
   </aside>
@@ -55,12 +34,12 @@ import { ref, useTemplateRef, onMounted } from 'vue';
 import { THEMES, NEXT_THEME } from '@/constants/themes';
 import { POSITIONS, NEXT_POSITION } from '@/constants/positions';
 import { TITLE_COPY, TITLE_CORNER, TITLE_LOGO, TITLE_THEME } from '@/constants/titles';
-import { RESERVED_PROPS } from '@/constants/reserved-props';
 
-import { getItemType } from '@/utils/get-item-type';
 import { copyToClipboard } from '@/utils/copy-to-clipboard';
 import { assignTokens } from '@/utils/assign-tokens';
-import { omitProps } from '@/utils/omit-props';
+
+import AppControl from '@/components/app-control.vue';
+import AppHeader from '@/components/app-header.vue';
 
 import IconTheme from '@/icons/icon-theme.vue';
 import IconCorners from '@/icons/icon-corners.vue';
@@ -68,8 +47,9 @@ import IconCopy from '@/icons/icon-copy.vue';
 import IconLogo from '@/icons/icon-logo.vue';
 import IconCheck from '@/icons/icon-check.vue';
 
+
 const el = useTemplateRef('el');
-const version = `${import.meta.env.VITE_Spicerack_VERSION}`;
+const version = `${import.meta.env.VITE_SPICERACK_VERSION}`;
 
 const props = defineProps({
   config: { type: Object, required: true },
@@ -96,32 +76,24 @@ const isOpen = ref(props.open);
 const theme = ref(props.theme);
 const corner = ref(props.position);
 const showCopyToast = ref(false);
-const toastTimeout = 1500
+const toastTimeout = 1500;
 let toastId = null;
 
-function getControl (control) {
-  return props.registry.get(getItemType(control));
-}
+// function handleEvent (type, item, value, event) {
+//   const handler = item[`on${capitalize(type)}`];
 
-function getControlProps (control) {
-  return omitProps(control, RESERVED_PROPS);
-}
+//   if (!handler || typeof handler !== 'function') {
+//     return;
+//   }
 
-function handleEvent (type, item, value, event) {
-  const handler = item[`on${capitalize(type)}`];
-
-  if (!handler || typeof handler !== "function") {
-    return;
-  }
-
-  handler({
-    type,
-    key: item.key,
-    value,
-    event,
-    model
-  });
-}
+//   handler({
+//     type,
+//     key: item.key,
+//     value,
+//     event,
+//     model
+//   });
+// }
 
 function handleToggleOpen (e) {
   isOpen.value = !isOpen.value;
@@ -139,12 +111,14 @@ function handleChangeTheme (e) {
 }
 
 function handleExportConfig (e) {
-  showCopyToast.value = true
+  showCopyToast.value = true;
   clearTimeout(toastId);
 
   copyToClipboard(props.model)
     .then(() => {
-      toastId = setTimeout(() => showCopyToast.value = false, toastTimeout)
+      toastId = setTimeout(() => {
+        showCopyToast.value = false;
+      }, toastTimeout);
     });
 }
 
@@ -195,45 +169,5 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: var(--sr-control-gap);
-}
-
-.sr-app__header {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 0.25rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-.sr-app__title {
-  flex-grow: 1;
-  font-size: var(--sr-fs-title);
-  font-weight: 600;
-  letter-spacing: 0;
-  text-align: left;
-}
-
-.sr-app__button {
-  align-items: center;
-  appearance: none;
-  aspect-ratio: 1;
-  background: var(--sr-bg-app);
-  border-radius: 0.25rem;
-  border: none;
-  color: var(--sr-fg-app);
-  cursor: pointer;
-  display: flex;
-  height: 1.5rem;
-  justify-content: center;
-  width: 1.5rem;
-
-  &:hover {
-    background-color: var(--sr-bg-alt);
-  }
-}
-
-.sr-app__icon-check {
-  stroke: var(--sr-fg-success);
 }
 </style>

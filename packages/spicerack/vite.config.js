@@ -5,7 +5,7 @@ import cssInjectedByPlugin from 'vite-plugin-css-injected-by-js';
 import { version } from './package.json' with { type: 'json' };
 import { readFileSync } from 'node:fs';
 
-process.env.VITE_Spicerack_VERSION = version;
+process.env.VITE_SPICERACK_VERSION = version;
 
 function emitTypes () {
   return {

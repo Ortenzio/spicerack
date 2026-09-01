@@ -52,13 +52,15 @@ function handleInput (e) {
   width: 100%;
   -webkit-appearance: none;
   appearance: none;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
 }
 
-[data-sr-control="range"] input[type="range"]::-webkit-slider-thumb {
+[data-sr-control="range"] input[type="range"]::-webkit-slider-thumb,
+[data-sr-control="range"] input[type="range"]::-moz-range-thumb  {
    -webkit-appearance: none; /* Override default look */
    appearance: none;
+   border: none;
    background-color: var(--sr-bg-alt);
    height: 1.5rem;
    width: 0.25rem;

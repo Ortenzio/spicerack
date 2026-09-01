@@ -2,7 +2,7 @@
   "name": "@ozio/spicerack",
   "description": "GUI Controller Library",
   "author": "Nicholas Ortenzio <nicholas.ortenzio@gmail.com>",
-  "version": "0.1.0-beta.7",
+  "version": "0.1.0-beta.8",
   "license": "MIT",
   "private": false,
   "type": "module",
@@ -34,9 +34,8 @@
   ],
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite build --watch",
     "build": "vite build",
-    "build:watch": "vite build -w",
     "lint": "oxlint",
     "test-publish": "npm pack --dry-run"
   },

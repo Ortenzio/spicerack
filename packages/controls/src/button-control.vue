@@ -34,10 +34,6 @@ function handleClick (e) {
   padding: 0.5rem;
   border-radius: 0.25rem;
 
-  @media (prefers-reduced-motion:  no-preference) {
-    transition: background-color 0.2s ease-in;
-  }
-
   &:hover {
     background: var(--sr-bg-accent-hover);
   }

@@ -26,7 +26,7 @@ function handleChange (e) {
 }
 
 [data-sr-control="number"] > input {
-  background: none;
+  background-color: transparent;
   border: none;
   outline: none;
   padding-left: 1rem;

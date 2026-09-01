@@ -77,12 +77,13 @@ gui.mount("#spicerack")
 const output = document.querySelector("#output")
 
 function render (a, b, c) {
-  console.log({ a, b, c });
   output.textContent = JSON.stringify(gui.json(), null, 2)
 }
 
 for (const key of Object.keys(gui.model)) {
   gui.model[key].on('change', render)
 }
+
+console.log(gui.version);
 
 render();
