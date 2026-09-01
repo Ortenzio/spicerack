@@ -56,11 +56,11 @@ export const TOKENS = {
 };
 
 export const TOKEN_MAP = {
-  appEdgeSpacing: '--sr-edge-spacing',
+  appEdgeSpacing: '--sr-app-edge',
   appPadding: '--sr-app-padding',
   appRadius: '--sr-app-radius',
   appWidth: '--sr-app-width',
-  appZIndex: '--sr-z',
+  appZIndex: '--sr-app-z',
 
   fontSizeControl: '--sr-fs-control',
   fontSizeInput: '--sr-fs-input',

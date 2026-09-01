@@ -1,4 +1,5 @@
 <template>
+
   <aside 
     class="sr-app" 
     aria-label="spicerack"
@@ -156,39 +157,38 @@ onMounted(() => {
 .sr-app {
   background: var(--sr-bg-app);
   border-radius: var(--sr-app-radius);
-  border: 1px solid var(--sr-border-app);
   box-shadow: var(--sr-shadow);
   color: var(--sr-fg-app);
   display: flex;
   flex-direction: column;
   gap: var(--sr-control-gap);
-  max-height: calc(100dvh - (var(--sr-edge-spacing) * 2));
+  max-height: calc(100dvh - (var(--sr-app-edge) * 2));
   min-width: 14rem;
   overflow: scroll;
   padding: var(--sr-app-padding);
   position: fixed;
   width: var(--sr-app-width);
-  z-index: var(--sr-z);
+  z-index: var(--sr-app-paddingz);
 }
 
 .sr-app[data-position="top-right"] {
-  right: var(--sr-edge-spacing);
-  top: var(--sr-edge-spacing);
+  right: var(--sr-app-edge);
+  top: var(--sr-app-edge);
 }
 
 .sr-app[data-position="top-left"] {
-  left: var(--sr-edge-spacing);
-  top: var(--sr-edge-spacing);
+  left: var(--sr-app-edge);
+  top: var(--sr-app-edge);
 }
 
 .sr-app[data-position="bottom-right"] {
-  bottom: var(--sr-edge-spacing);
-  right: var(--sr-edge-spacing);
+  bottom: var(--sr-app-edge);
+  right: var(--sr-app-edge);
 }
 
 .sr-app[data-position="bottom-left"] {
-  bottom: var(--sr-edge-spacing);
-  left: var(--sr-edge-spacing);
+  bottom: var(--sr-app-edge);
+  left: var(--sr-app-edge);
 }
 
 .sr-app__controls {
