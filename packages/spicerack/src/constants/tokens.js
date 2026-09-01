@@ -36,6 +36,7 @@ export const TOKENS = {
   bgColorControl: 'light-dark(oklch(100% 0 260), oklch(30% 0 260))',
   bgColorElm: 'light-dark(oklch(94% 0 260), oklch(13% 0 260))',
   bgColorMuted: 'light-dark(oklch(96% 0.002 260), oklch(30% 0 260))',
+  bgColorSuccess: `light-dark(#E9F6E9, #1B2A1E)`,
 
   fgColorAccent: 'light-dark(#000000, #000000)',
   fgColorActive: 'light-dark(oklch(100% 0 0), oklch(14% 0.01 260))',
@@ -44,6 +45,7 @@ export const TOKENS = {
   fgColorCard: 'light-dark(oklch(24% 0.01 260), oklch(94% 0.004 260))',
   fgColorElm: 'light-dark(oklch(26% 0.01 260), oklch(95% 0.003 260))',
   fgColorMuted: 'light-dark(oklch(52% 0.008 260), oklch(68% 0.005 260))',
+  fgColorSuccess: `light-dark(#3E9B4F, #53B365)`,
 
   borderColorActive: 'light-dark(oklch(50% 0.18 258), oklch(72% 0.14 258))',
   borderColorAlt: 'light-dark(oklch(68% 0.008 260), oklch(54% 0.007 260))',
@@ -76,6 +78,7 @@ export const TOKEN_MAP = {
   bgColorControl: '--sr-bg-control',
   bgColorElm: '--sr-bg-elm',
   bgColorMuted: '--sr-bg-muted',
+  bgColorSuccess: '--sr-bg-success',
 
   fgColorAccent: '--sr-fg-accent',
   fgColorActive: '--sr-fg-active',
@@ -84,6 +87,7 @@ export const TOKEN_MAP = {
   fgColorCard: '--sr-fg-card',
   fgColorElm: '--sr-fg-elm',
   fgColorMuted: '--sr-fg-muted',
+  fgColorSuccess: '--sr-fg-success',
 
   borderColorActive: '--sr-border-active',
   borderColorAlt: '--sr-border-alt',

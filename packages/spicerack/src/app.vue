@@ -1,7 +1,7 @@
 <template>
-  <div 
+  <aside 
     class="sr-app" 
-    role="dialog"
+    aria-label="spicerack"
     ref="el"
     :data-version="version"
     :data-theme="theme"
@@ -17,7 +17,8 @@
       <span v-if="title" class="sr-app__title" v-text="`${title}`"/>
 
       <button class="sr-app__button" @click="handleExportConfig" :title="TITLE_COPY">
-        <icon-copy class="sr-app__svg" aria-hidden />
+        <icon-check v-if="showCopyToast" class="sr-app__icon-check" aria-hidden />
+        <icon-copy v-else class="sr-app__icon-copy" aria-hidden />
       </button>
 
       <button class="sr-app__button" @click="handleChangePosition" :title="TITLE_CORNER" >
@@ -44,7 +45,7 @@
       </template>
     </section>
 
-  </div>
+  </aside>
 </template>
 
 <script setup>
@@ -64,6 +65,7 @@ import IconTheme from '@/icons/icon-theme.vue';
 import IconCorners from '@/icons/icon-corners.vue';
 import IconCopy from '@/icons/icon-copy.vue';
 import IconLogo from '@/icons/icon-logo.vue';
+import IconCheck from '@/icons/icon-check.vue';
 
 const el = useTemplateRef('el');
 const version = `${import.meta.env.VITE_Spicerack_VERSION}`;
@@ -92,6 +94,9 @@ const props = defineProps({
 const isOpen = ref(props.open);
 const theme = ref(props.theme);
 const corner = ref(props.position);
+const showCopyToast = ref(false);
+const toastTimeout = 1500
+let toastId = null;
 
 function getControl (control) {
   return props.registry.get(getItemType(control));
@@ -133,7 +138,13 @@ function handleChangeTheme (e) {
 }
 
 function handleExportConfig (e) {
-  copyToClipboard(props.model);
+  showCopyToast.value = true
+  clearTimeout(toastId);
+
+  copyToClipboard(props.model)
+    .then(() => {
+      toastId = setTimeout(() => showCopyToast.value = false, toastTimeout)
+    });
 }
 
 onMounted(() => {
@@ -222,8 +233,7 @@ onMounted(() => {
   }
 }
 
-.sr-app__svg {
-  height: 15px;
-  width: 15px;
+.sr-app__icon-check {
+  stroke: var(--sr-fg-success);
 }
 </style>
