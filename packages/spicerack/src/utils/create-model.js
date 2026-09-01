@@ -28,7 +28,6 @@ export function createModel (config) {
       }
 
       if (typeof item.key !== 'string' || item.key.length === 0) {
-        console.log(item);
         throw new Error('A valid key is required');
       }
 
