@@ -6,8 +6,8 @@ const config = [
     type: 'folder',
     label: 'Strings',
     config: [
-      { key: 'name', value: 'Nicholas', type: 'text', label: 'Name' },
-      { key: 'message', value: 'It was that impossible thing...', type: 'textarea', label: 'Message', rows: 3 },
+      { key: 'name', value: 'Nicholas', type: 'text', label: 'Name', onChange: render },
+      { key: 'message', value: 'It was that impossible thing...', type: 'textarea', label: 'Message', rows: 3, onChange: render },
     ]
   },
   { 
@@ -76,7 +76,8 @@ gui.mount("#spicerack")
  */
 const output = document.querySelector("#output")
 
-const render = function () {
+function render (a, b, c) {
+  console.log({ a, b, c });
   output.textContent = JSON.stringify(gui.json(), null, 2)
 }
 
