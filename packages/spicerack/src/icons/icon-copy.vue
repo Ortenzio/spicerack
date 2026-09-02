@@ -1,3 +1,3 @@
 <template>
-  <svg viewBox="0 0 15 15" data-sr-icon xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M10 4V2.5c0-.28-.22-.5-.5-.5h-7c-.28 0-.5.22-.5.5v7c0 .28.22.5.5.5H4V5.5C4 4.67 4.67 4 5.5 4zM5.5 5c-.28 0-.5.22-.5.5v7c0 .28.22.5.5.5h7c.28 0 .5-.22.5-.5v-7c0-.28-.22-.5-.5-.5zm7-1c.83 0 1.5.67 1.5 1.5v7c0 .83-.67 1.5-1.5 1.5h-7c-.83 0-1.5-.67-1.5-1.5V11H2.5C1.67 11 1 10.33 1 9.5v-7C1 1.67 1.67 1 2.5 1h7c.83 0 1.5.67 1.5 1.5V4z"/></svg>
+  <svg viewBox="0 0 15 15" data-sr-icon xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"><path d="M5.5 4.5q-1 0-1 1v7q0 1 1 1h7q1 0 1-1v-7q0-1-1-1h-7m5 0v-2q0-1-1-1h-7q-1 0-1 1v7q0 1 1 1h2"/></svg>
 </template>
