@@ -1,7 +1,7 @@
 <template>
   <div data-sr-control="radio">
     <span data-sr-label v-if="label">{{ label }}</span>
-    <div role="group" :aria-label="`${label} Options`" :style="{gridTemplateColumns: `repeat(${props.cols}, 1fr)`}">
+    <div role="group" :aria-label="`${label} Options`" :style>
       <button 
         v-for="d in options" 
         type="button"
@@ -27,6 +27,7 @@ const props = defineProps({
 const toValue = (d) => (typeof d === 'object' && d !== null) ? d.value : d;
 const toLabel = (d) => (typeof d === 'object' && d !== null) ? d.label : d;
 const isActive = (d) => (toValue(d) === model.value);
+const style = { gridTemplateColumns: `repeat(${props.cols}, 1fr)` };
 
 /** any type */
 const model = defineModel({ validator: () => true });

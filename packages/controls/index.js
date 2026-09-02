@@ -2,6 +2,7 @@ export { default as BooleanControl } from '@/boolean-control.vue';
 export { default as ButtonControl } from '@/button-control.vue';
 export { default as DividerControl } from '@/divider-control.vue';
 export { default as FolderControl } from '@/folder-control.vue';
+export { default as GroupControl } from '@/group-control.vue';
 export { default as ListControl } from '@/list-control.vue';
 export { default as NumberControl } from '@/number-control.vue';
 export { default as RadioControl } from '@/radio-control.vue';

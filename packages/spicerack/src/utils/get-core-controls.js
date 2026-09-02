@@ -6,6 +6,7 @@ export function getCoreControls () {
     'button': coreControls.ButtonControl,
     'divider': coreControls.DividerControl,
     'folder': coreControls.FolderControl,
+    'group': coreControls.GroupControl,
     'list': coreControls.ListControl,
     'number': coreControls.NumberControl,
     'radio': coreControls.RadioControl,

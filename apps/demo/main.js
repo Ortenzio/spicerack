@@ -2,31 +2,45 @@ import { createSpicerack } from '@ozio/spicerack';
 import "./style.css";
 
 const config = [
-  { 
-    type: 'folder',
-    label: 'Strings',
+  // { 
+  //   type: 'folder',
+  //   label: 'Strings',
+  //   config: [
+  //     { key: 'name', value: 'Nicholas', type: 'text', label: 'Name', onChange: render },
+  //     { key: 'message', value: 'It was that impossible thing...', type: 'textarea', label: 'Message', rows: 3, onChange: render },
+  //   ]
+  // },
+  // { 
+  //   type: 'folder',
+  //   label: 'Numbers', 
+  //   open: true,
+  //   config: [
+  //     { key: 'points', value: 32, type: 'range', label: 'Points', step: 1 },
+  //     { key: 'rebounds', value: 10, type: 'number', label: 'Rebounds' },
+  //   ]
+  // },
+  // { 
+  //   type: 'folder',
+  //   label: 'Flags', 
+  //   open: false,
+  //   config: [
+  //     { key: 'shotMade', value: true, type: 'boolean', label: 'Made Shots' },
+  //     { key: 'starter', value: true, type: 'toggle', label: 'Starter' },
+  //     { key: 'isRookie', value: false, type: 'switch', label: 'Is Rookie' },
+  //   ]
+  // },
+  {
+    type: 'group',
+    label: 'Groups',
+    flow: 'row',
+    cols: 4,
     config: [
-      { key: 'name', value: 'Nicholas', type: 'text', label: 'Name', onChange: render },
-      { key: 'message', value: 'It was that impossible thing...', type: 'textarea', label: 'Message', rows: 3, onChange: render },
-    ]
-  },
-  { 
-    type: 'folder',
-    label: 'Numbers', 
-    open: true,
-    config: [
-      { key: 'points', value: 32, type: 'range', label: 'Points', step: 1 },
-      { key: 'rebounds', value: 10, type: 'number', label: 'Rebounds' },
-    ]
-  },
-  { 
-    type: 'folder',
-    label: 'Flags', 
-    open: false,
-    config: [
-      { key: 'shotMade', value: true, type: 'boolean', label: 'Made Shots' },
-      { key: 'starter', value: true, type: 'toggle', label: 'Starter' },
-      { key: 'isRookie', value: false, type: 'switch', label: 'Is Rookie' },
+      { type: 'button', label: 'A' },
+      { type: 'button', label: 'B' },
+      { type: 'button', label: 'C' },
+      { type: 'button', label: 'D' },
+      { type: 'button', label: 'E' },
+      { type: 'button', label: 'F' },
     ]
   },
   {
@@ -54,24 +68,21 @@ const config = [
       { value: 'bottom right', label: '↘' },
     ]
   },
-  {
-    key: 'division', 
-    type: 'list', 
-    value: 'Atlantic', 
-    label: 'Division',
-    options: [
-      'Atlantic', 
-      'Central', 
-      'Southeast',
-      'Northwest',
-      'Pacific',
-      'Southwest'
-    ]
-  },       
-  { 
-    type: 'button', 
-    label: 'Click Me'
-  }
+  // {
+  //   key: 'division', 
+  //   type: 'list', 
+  //   value: 'Atlantic', 
+  //   label: 'Division',
+  //   options: [
+  //     'Atlantic', 
+  //     'Central', 
+  //     'Southeast',
+  //     'Northwest',
+  //     'Pacific',
+  //     'Southwest'
+  //   ]
+  // },
+  { type: 'button', label: 'Click Me' }
 ];
 
 const gui = createSpicerack(config, { title: 'Spicerack Demo' })
@@ -83,7 +94,7 @@ gui.mount("#spicerack")
  */
 const output = document.querySelector("#output")
 
-function render (a, b, c) {
+function render () {
   output.textContent = JSON.stringify(gui.json(), null, 2)
 }
 
