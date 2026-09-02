@@ -18,10 +18,10 @@ const toLabel = (d) => (typeof d === 'object' && d !== null) ? d.label : d;
 
 /** any type */
 const model = defineModel({ validator: () => true });
-const emit = defineEmits(['change']);
+const emits = defineEmits(['change']);
 
 function handleChange (e) {
-  emit('change', model.value, e);
+  emits('change', model.value, e);
 }
 </script>
 

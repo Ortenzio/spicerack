@@ -38,7 +38,7 @@ export const TOKENS = {
   bgColorSuccess: 'light-dark(#E9F6E9, #1B2A1E)',
 
   fgColorAccent: 'light-dark(#000000, #000000)',
-  fgColorActive: 'light-dark(oklch(100% 0 0), oklch(14% 0.01 260))',
+  fgColorActive: 'light-dark(oklch(100% 0 0), oklch(100% 0 260))',
   fgColorAlt: 'light-dark(oklch(42% 0.01 260), oklch(78% 0.006 260))',
   fgColorApp: 'light-dark(oklch(24% 0.01 260), oklch(94% 0.004 260))',
   fgColorElm: 'light-dark(oklch(26% 0.01 260), oklch(95% 0.003 260))',

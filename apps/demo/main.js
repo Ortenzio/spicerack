@@ -34,17 +34,24 @@ const config = [
     type: 'radio',
     value: 'Both', 
     label: 'Location',
-    items: ['Both', 'Home', 'Away']
+    options: ['Both', 'Home', 'Away']
   },
   {
-    key: 'conference', 
-    type: 'list', 
-    value: '',
-    label: 'Conference',
+    key: 'align', 
+    type: 'radio',
+    value: 'center center', 
+    label: 'Align',
+    cols: 3,
     options: [
-      { value: '', label: 'All Conferences', },
-      { value: 'east', label: 'Eastern' },
-      { value: 'west', label: 'Western' }
+      { value: 'top left', label: '↖' },
+      { value: 'top center', label: '↑' },
+      { value: 'top right', label: '↗' },
+      { value: 'center left', label: '←' },
+      { value: 'center center', label: '•' },
+      { value: 'center right', label: '→' },
+      { value: 'bottom left', label: '↙' },
+      { value: 'bottom center', label: '↓' },
+      { value: 'bottom right', label: '↘' },
     ]
   },
   {

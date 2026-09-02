@@ -14,15 +14,15 @@ const props = defineProps({
   step: { type: [Number, String], default: 'any' }
 });
 
-const emit = defineEmits(['change', 'input']);
+const emits = defineEmits(['change', 'input']);
 const model = defineModel({ type: Number });
 
 function handleChange (e) {
-  emit('change', model.value, e);
+  emits('change', model.value, e);
 }
 
 function handleInput (e) {
-  emit('input', model.value, e);
+  emits('input', model.value, e);
 }
 </script>
 

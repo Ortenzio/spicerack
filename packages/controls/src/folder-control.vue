@@ -24,11 +24,11 @@ const props = defineProps({
 
 const id = useId();
 const isOpen = ref(props.open);
-const emit = defineEmits(['click']);
+const emits = defineEmits(['click']);
 
 function handleClick (e) {
   isOpen.value = !isOpen.value;
-  emit('click', e);
+  emits('click', e);
 }
 </script>
 

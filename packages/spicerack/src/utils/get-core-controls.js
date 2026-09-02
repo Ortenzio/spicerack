@@ -8,6 +8,7 @@ export function getCoreControls () {
     'folder': coreControls.FolderControl,
     'list': coreControls.ListControl,
     'number': coreControls.NumberControl,
+    'radio': coreControls.RadioControl,
     'range': coreControls.RangeControl,
     'switch': coreControls.SwitchControl,
     'text': coreControls.TextControl,

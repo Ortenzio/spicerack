@@ -9,10 +9,10 @@ const props = defineProps({
   label: { type: String, default: null }
 });
 
-const emit = defineEmits(['click']);
+const emits = defineEmits(['click']);
 
 function handleClick (e) {
-  emit('click', e);
+  emits('click', e);
 }
 </script>
 

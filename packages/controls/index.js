@@ -4,6 +4,7 @@ export { default as DividerControl } from '@/divider-control.vue';
 export { default as FolderControl } from '@/folder-control.vue';
 export { default as ListControl } from '@/list-control.vue';
 export { default as NumberControl } from '@/number-control.vue';
+export { default as RadioControl } from '@/radio-control.vue';
 export { default as RangeControl } from '@/range-control.vue';
 export { default as SwitchControl } from '@/switch-control.vue';
 export { default as TextareaControl } from '@/textarea-control.vue';
