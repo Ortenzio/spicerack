@@ -12,11 +12,11 @@ defineProps({
   label: { type: String, default: null }
 });
 
-const emit = defineEmits(['change']);
+const emits = defineEmits(['change']);
 const model = defineModel({ type: Boolean });
 
 function handleChange (e) {
-  emit('change', model.value, e);
+  emits('change', model.value, e);
 }
 </script>
 

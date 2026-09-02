@@ -12,11 +12,11 @@ const props = defineProps({
   max: { type: Number, default: null }
 });
 
-const emit = defineEmits(['change']);
+const emits = defineEmits(['change']);
 const model = defineModel({ type: Number });
 
 function handleChange (e) {
-  emit('change', model.value, e);
+  emits('change', model.value, e);
 }
 </script>
 
@@ -26,7 +26,7 @@ function handleChange (e) {
 }
 
 [data-sr-control="number"] > input {
-  background: none;
+  background-color: transparent;
   border: none;
   outline: none;
   padding-left: 1rem;

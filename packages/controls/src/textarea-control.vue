@@ -21,11 +21,11 @@ defineProps({
   resize: { type: Boolean, default: true }
 });
 
-const emit = defineEmits(['change']);
+const emits = defineEmits(['change']);
 const model = defineModel({ type: String });
 
 function handleChange (e) {
-  emit('change', model.value, e);
+  emits('change', model.value, e);
 }
 </script>
 

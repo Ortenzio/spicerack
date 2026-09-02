@@ -14,15 +14,15 @@ const props = defineProps({
   step: { type: [Number, String], default: 'any' }
 });
 
-const emit = defineEmits(['change', 'input']);
+const emits = defineEmits(['change', 'input']);
 const model = defineModel({ type: Number });
 
 function handleChange (e) {
-  emit('change', model.value, e);
+  emits('change', model.value, e);
 }
 
 function handleInput (e) {
-  emit('input', model.value, e);
+  emits('input', model.value, e);
 }
 </script>
 
@@ -52,13 +52,15 @@ function handleInput (e) {
   width: 100%;
   -webkit-appearance: none;
   appearance: none;
-  background: transparent;
+  background-color: transparent;
   cursor: pointer;
 }
 
-[data-sr-control="range"] input[type="range"]::-webkit-slider-thumb {
+[data-sr-control="range"] input[type="range"]::-webkit-slider-thumb,
+[data-sr-control="range"] input[type="range"]::-moz-range-thumb  {
    -webkit-appearance: none; /* Override default look */
    appearance: none;
+   border: none;
    background-color: var(--sr-bg-alt);
    height: 1.5rem;
    width: 0.25rem;

@@ -1,7 +1,13 @@
 /**
  *
+ * Given an object `obj`, return a copy that omits
+ * and keys included in the set `props`
+ *
+ * This is used to exclude extraneous data being
+ * bound to control components when using v-bind
+ *
  * @param {*} obj
- * @param {*} props
+ * @param {Set} props
  * @returns {object}
  */
 export function omitProps (obj, props) {

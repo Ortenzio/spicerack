@@ -9,10 +9,10 @@ const props = defineProps({
   label: { type: String, default: null }
 });
 
-const emit = defineEmits(['click']);
+const emits = defineEmits(['click']);
 
 function handleClick (e) {
-  emit('click', e);
+  emits('click', e);
 }
 </script>
 
@@ -33,10 +33,6 @@ function handleClick (e) {
   color: var(--sr-fg-active);
   padding: 0.5rem;
   border-radius: 0.25rem;
-
-  @media (prefers-reduced-motion:  no-preference) {
-    transition: background-color 0.2s ease-in;
-  }
 
   &:hover {
     background: var(--sr-bg-accent-hover);
