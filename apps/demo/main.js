@@ -30,6 +30,13 @@ const config = [
   //   ]
   // },
   {
+    type: 'password',
+    key: 'pass',
+    label: 'Password',
+    value: 'hacker',
+    show: false
+  },
+  {
     type: 'group',
     label: 'Groups',
     flow: 'row',
@@ -85,7 +92,14 @@ const config = [
   { type: 'button', label: 'Click Me' }
 ];
 
-const gui = createSpicerack(config, { title: 'Spicerack Demo' })
+const gui = createSpicerack(config, { 
+  title: 'Spicerack Demo',
+  tokens: {
+    bgColorAccent: 'light-dark(#00749E, #1B537B)',
+    bgColorMuted: 'light-dark(#00749E, #1B537B)',
+    bgColorActive: 'light-dark(#00749E, #1B537B)',
+  }
+})
 
 gui.mount("#spicerack")
 

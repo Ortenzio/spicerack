@@ -1,6 +1,8 @@
-const modellessTypes = new Set(['button', 'folder', 'tabs']);
+const modellessTypes = new Set(['button', 'folder', 'grouop', 'tabs']);
 
 /**
+ *
+ * @todo - unused (for now)
  *
  * @param {import("../types/spicerack.d.ts").SpicerackConfig} item
  * @returns {boolean}

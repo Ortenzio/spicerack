@@ -10,4 +10,4 @@
  * destructure the config option to prevent code drift?
  *
  */
-export const RESERVED_PROPS = new Set(['key', 'value', 'type', 'config', 'registry']);
+export const RESERVED_PROPS = new Set(['key', 'value', 'type', 'locked', 'config', 'registry']);

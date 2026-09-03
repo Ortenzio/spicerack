@@ -1,29 +1,27 @@
 <template>
   <header>
-    <button :title="TITLE_LOGO" :aria-expanded="isOpen" :aria-controls="controls" @click="$emit('collapse')">
+    <button title="Show/Hide" :aria-expanded="isOpen" :aria-controls="controlsId" @click="$emit('collapse')">
       <icon-logo aria-hidden />
     </button>
 
     <h1 v-if="title" v-text="title" />
 
-    <button @click="$emit('copy')" :title="TITLE_COPY">
+    <button @click="$emit('copy')" title="Copy Values">
       <icon-check class="sr__icon-check" v-if="showCopyToast" aria-hidden />
       <icon-copy v-else aria-hidden />
     </button>
 
-    <button @click="$emit('position')" :title="TITLE_CORNER" >
+    <button @click="$emit('position')" title="Change corner" >
       <icon-corners aria-hidden />
     </button>
 
-    <button @click="$emit('theme')" :title="TITLE_THEME" >
+    <button @click="$emit('theme')" title="Toggle Theme" >
       <icon-theme aria-hidden />
     </button>
   </header>
 </template>
 
 <script setup>
-import { TITLE_COPY, TITLE_CORNER, TITLE_LOGO, TITLE_THEME } from '@/constants/titles';
-
 import IconTheme from '@/icons/icon-theme.vue';
 import IconCorners from '@/icons/icon-corners.vue';
 import IconCopy from '@/icons/icon-copy.vue';
@@ -34,7 +32,7 @@ const props = defineProps({
   title: { type: String, required: false, default: null },
   showCopyToast: { type: Boolean, required: true, default: false },
   isOpen: { type: Boolean, required: false, default: true },
-  controls: { type: String, required: false, default: '' }
+  controlsId: { type: String, required: false, default: '' }
 });
 
 const emits = defineEmits(['collapse', 'copy', 'position', 'theme']);

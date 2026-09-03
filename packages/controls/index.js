@@ -5,6 +5,7 @@ export { default as FolderControl } from '@/folder-control.vue';
 export { default as GroupControl } from '@/group-control.vue';
 export { default as ListControl } from '@/list-control.vue';
 export { default as NumberControl } from '@/number-control.vue';
+export { default as PasswordControl } from '@/password-control.vue';
 export { default as RadioControl } from '@/radio-control.vue';
 export { default as RangeControl } from '@/range-control.vue';
 export { default as SwitchControl } from '@/switch-control.vue';

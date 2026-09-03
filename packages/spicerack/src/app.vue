@@ -14,7 +14,7 @@
       :open="isOpen"
       :show-copy-toast
       :title
-      controls="sr-app-controls"
+      controls-id="sr-app-controls"
       @collapse="handleToggleOpen"
       @copy="handleExportConfig"
       @position="handleChangePosition"
@@ -22,7 +22,13 @@
     />
 
     <section class="sr-app__controls" id="sr-app-controls" v-show="isOpen">  
-      <app-control v-for="d in config" :key="d.key ?? d.type" :item="d" :model  :registry />
+      <app-control
+        v-for="d in config"
+        :key="d.key ?? d.type"
+        :item="d"
+        :model
+        :registry
+      />
     </section>
 
   </aside>
@@ -33,20 +39,12 @@ import { ref, useTemplateRef, onMounted } from 'vue';
 
 import { THEMES, NEXT_THEME } from '@/constants/themes';
 import { POSITIONS, NEXT_POSITION } from '@/constants/positions';
-import { TITLE_COPY, TITLE_CORNER, TITLE_LOGO, TITLE_THEME } from '@/constants/titles';
 
 import { copyToClipboard } from '@/utils/copy-to-clipboard';
 import { assignTokens } from '@/utils/assign-tokens';
 
 import AppControl from '@/components/app-control.vue';
 import AppHeader from '@/components/app-header.vue';
-
-import IconTheme from '@/icons/icon-theme.vue';
-import IconCorners from '@/icons/icon-corners.vue';
-import IconCopy from '@/icons/icon-copy.vue';
-import IconLogo from '@/icons/icon-logo.vue';
-import IconCheck from '@/icons/icon-check.vue';
-
 
 const el = useTemplateRef('el');
 const version = `${import.meta.env.VITE_SPICERACK_VERSION}`;
@@ -78,22 +76,6 @@ const corner = ref(props.position);
 const showCopyToast = ref(false);
 const toastTimeout = 1500;
 let toastId = null;
-
-// function handleEvent (type, item, value, event) {
-//   const handler = item[`on${capitalize(type)}`];
-
-//   if (!handler || typeof handler !== 'function') {
-//     return;
-//   }
-
-//   handler({
-//     type,
-//     key: item.key,
-//     value,
-//     event,
-//     model
-//   });
-// }
 
 function handleToggleOpen (e) {
   isOpen.value = !isOpen.value;

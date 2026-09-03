@@ -2,6 +2,7 @@
 
 ### UI
 
+- Autohide / auto collapse
 - Callbacks (change, edit start, edit end, click)
 - [Conditional Modules](https://ryankiley.github.io/tweakit/panel-api.html#ex-conditional)
 - Copy invididual values

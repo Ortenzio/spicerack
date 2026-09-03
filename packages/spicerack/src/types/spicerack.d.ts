@@ -56,6 +56,7 @@ export interface SpicerackOptions {
   controls?: Record<string, SpicerackControl>;
   tokens?: SpicerackTokens;
   open?: boolean;
+  // autoHide?: number;
   theme?: SpicerackTheme;
   position?: SpicerackPosition;
   title?: string;

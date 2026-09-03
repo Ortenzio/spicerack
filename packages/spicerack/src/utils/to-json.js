@@ -1,4 +1,7 @@
 /**
+ * Converts the model, which uses
+ * proxy values into vanilla JSON
+ *
  * @param {object} model - Proxy object for model
  * @returns {object} plain json
  */

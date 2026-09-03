@@ -9,6 +9,7 @@ export function getCoreControls () {
     'group': coreControls.GroupControl,
     'list': coreControls.ListControl,
     'number': coreControls.NumberControl,
+    'password': coreControls.PasswordControl,
     'radio': coreControls.RadioControl,
     'range': coreControls.RangeControl,
     'switch': coreControls.SwitchControl,
