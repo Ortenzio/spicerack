@@ -6,7 +6,7 @@
 
     <h1 v-if="title" v-text="title" />
 
-    <button @click="$emit('copy')" title="Copy Values">
+    <button @click="$emit('copy')" title="Copy values to clipboard">
       <icon-check class="sr__icon-check" v-if="showCopyToast" aria-hidden />
       <icon-copy v-else aria-hidden />
     </button>
@@ -15,7 +15,7 @@
       <icon-corners aria-hidden />
     </button>
 
-    <button @click="$emit('theme')" title="Toggle Theme" >
+    <button @click="$emit('theme')" title="Toggle theme" >
       <icon-theme aria-hidden />
     </button>
   </header>
