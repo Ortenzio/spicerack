@@ -26,7 +26,7 @@
 
   & :where([data-sr-label]) {
     color: var(--sr-fg-alt);
-    font-size: var(--sr-fs-control);
+    font-size: var(--sr-fs-label);
     line-height: 1.5;
     text-align: left;
     flex-grow: 0;

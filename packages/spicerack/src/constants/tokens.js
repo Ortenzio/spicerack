@@ -37,7 +37,13 @@ export const TOKENS = {
   fgColorElm: ['--sr-fg-elm', 'light-dark(oklch(26% 0.01 260), oklch(95% 0.003 260))'],
   fgColorMuted: ['--sr-fg-muted', 'light-dark(oklch(52% 0.008 260), oklch(68% 0.005 260))'],
   fgColorSuccess: ['--sr-fg-success', 'light-dark(#3E9B4F, #53B365)'],
-  fontSizeControl: ['--sr-fs-control', '0.6875rem'],
+  fontSizeLabel: ['--sr-fs-label', '0.6875rem'],
   fontSizeInput: ['--sr-fs-input', '0.75rem'],
-  fontSizeTitle: ['--sr-fs-title', '0.75rem']
+  fontSizeTitle: ['--sr-fs-title', '0.75rem'],
+  accent: ['--sr-accent', 'light-dark()'],
+  accentMuted: ['--sr-accent-muted', 'light-dark()'],
+  success: ['--sr-success', 'light-dark()'],
+  successMuted: ['--sr-success-muted', 'light-dark()'],
+  danger: ['--sr-danger', 'light-dark()'],
+  dangerMuted: ['--sr-danger-muted', 'light-dark()']
 };

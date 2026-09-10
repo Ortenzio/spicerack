@@ -69,7 +69,7 @@ function handleChange (e) {
   cursor: pointer;
   padding: 0.25rem;
   border-radius: var(--sr-control-radius);
-  font-size: var(--sr-fs-control);
+  font-size: var(--sr-fs-label);
 
   &:hover {
     background-color: var(--sr-bg-muted);

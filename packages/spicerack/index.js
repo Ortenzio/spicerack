@@ -21,6 +21,7 @@ export function createSpicerack (config, options = {}) {
   const coreControls = getCoreControls();
   const registry = createRegistry(({ ...coreControls, ...options.controls }));
   const model = createModel(config);
+  // const tokens = createTokens(options.tokens, );
 
   /**
    *
@@ -44,6 +45,6 @@ export function createSpicerack (config, options = {}) {
     mount,
     model,
     json: () => toJson(model),
-    version: `${import.meta.env.VITE_Spicerack_VERSION}`
+    version: `${import.meta.env.VITE_SPICERACK_VERSION}`
   });
 }

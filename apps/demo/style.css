@@ -13,3 +13,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+#main {
+  padding: 2rem;
+}
+
+#output {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
