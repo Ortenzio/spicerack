@@ -6,6 +6,11 @@
   "license": "MIT",
   "private": false,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ortenzio/spicerack.git"
+  },
+  "homepage": "https://github.com/ortenzio/spicerack",
   "bugs": "https://github.com/ortenzio/spicerack/issues",
   "keywords": [
     "spicerack",
@@ -17,11 +22,6 @@
     "bindings",
     "gui"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ortenzio/spicerack.git"
-  },
-  "homepage": "https://github.com/ortenzio/spicerack",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
