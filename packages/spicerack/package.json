@@ -8,10 +8,10 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ortenzio/spicerack.git"
+    "url": "https://github.com/Ortenzio/spicerack.git"
   },
-  "homepage": "https://github.com/ortenzio/spicerack",
-  "bugs": "https://github.com/ortenzio/spicerack/issues",
+  "homepage": "https://github.com/Ortenzio/spicerack",
+  "bugs": "https://github.com/Ortenzio/spicerack/issues",
   "keywords": [
     "spicerack",
     "dat-gui",
