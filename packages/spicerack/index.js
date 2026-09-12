@@ -4,7 +4,6 @@ import { createModel } from '@/utils/create-model';
 import { createRegistry } from '@/utils/create-registry';
 import { getCoreControls } from '@/utils/get-core-controls';
 import { getSpicerackProps } from '@/utils/get-spicerack-props';
-import { getStyleTokens } from '@/utils/get-style-tokens';
 import { toJson } from '@/utils/to-json';
 
 import Spicerack from '@/app.vue';
@@ -20,9 +19,9 @@ import './src/styles/index.css';
 export function createSpicerack (config, options = {}) {
 
   const coreControls = getCoreControls();
-  const tokens = getStyleTokens(options.tokens);
   const registry = createRegistry(({ ...coreControls, ...options.controls }));
   const model = createModel(config);
+  // const tokens = createTokens(options.tokens, );
 
   /**
    *
@@ -36,7 +35,7 @@ export function createSpicerack (config, options = {}) {
         config,
         model,
         registry,
-        tokens,
+        tokens: options.tokens,
         options
       })
     ).mount(selector);
@@ -46,6 +45,6 @@ export function createSpicerack (config, options = {}) {
     mount,
     model,
     json: () => toJson(model),
-    version: `${import.meta.env.VITE_Spicerack_VERSION}`
+    version: `${import.meta.env.VITE_SPICERACK_VERSION}`
   });
 }

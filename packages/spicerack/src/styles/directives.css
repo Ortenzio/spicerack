@@ -4,6 +4,11 @@
     flex-grow: 1;
   }
 
+  & :where([data-sr-icon]) {
+    height: 15px;
+    width: 15px;
+  }
+
   & :where([data-sr-control]) {
     align-items: center;
     background-color: var(--sr-bg-control);
@@ -21,7 +26,7 @@
 
   & :where([data-sr-label]) {
     color: var(--sr-fg-alt);
-    font-size: var(--sr-fs-control);
+    font-size: var(--sr-fs-label);
     line-height: 1.5;
     text-align: left;
     flex-grow: 0;

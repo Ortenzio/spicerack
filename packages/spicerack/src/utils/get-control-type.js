@@ -5,7 +5,7 @@
  * @param {array} [props.config]
  * @returns {string}
  */
-export function getItemType ({
+export function getControlType ({
   type,
   value,
   config,

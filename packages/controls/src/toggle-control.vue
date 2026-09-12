@@ -12,12 +12,12 @@ const props = defineProps({
   label: { type: String, default: null }
 });
 
-const emit = defineEmits(['change']);
+const emits = defineEmits(['change']);
 const model = defineModel({ type: Boolean });
 
 function handleToggle (e) {
   model.value = !model.value;
-  emit('change', model.value, e);
+  emits('change', model.value, e);
 }
 </script>
 

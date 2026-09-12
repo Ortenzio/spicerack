@@ -1,3 +1,3 @@
 <template>
-  <svg width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7.5.88c3.66 0 6.62 2.96 6.62 6.62s-2.96 6.62-6.62 6.62S.88 11.16.88 7.5 3.84.88 7.5.88m0 .95c-3.13 0-5.67 2.54-5.67 5.67s2.54 5.67 5.67 5.67z"/></svg>
+  <svg viewBox="0 0 15 15" data-sr-icon fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" stroke="none" d="M7.5 1.5v12a1 1 90 000-12"/><circle stroke-width="1" stroke="currentColor" fill="none" cx="7.5" cy="7.5" r="6.125"/></svg>
 </template>

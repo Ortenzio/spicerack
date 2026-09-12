@@ -383,7 +383,7 @@ Controls can use Spicerack's CSS custom properties, including:
 - `--sr-bg-app`, `--sr-bg-control`, `--sr-bg-accent`
 - `--sr-fg-app`, `--sr-fg-elm`, `--sr-fg-muted`
 - `--sr-border-app`, `--sr-border-active`
-- `--sr-fs-control`, `--sr-fs-input`
+- `--sr-fs-label`, `--sr-fs-input`
 - `--sr-control-radius`, `--sr-control-gap`
 
 Treat these as part of the current authoring environment, but expect the design-token surface to evolve during beta releases.

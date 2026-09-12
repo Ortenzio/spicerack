@@ -18,7 +18,7 @@ export function getSpicerackProps ({
     model,
     registry,
     tokens,
-    version: import.meta.env.VITE_Spicerack_VERSION,
+    version: import.meta.env.VITE_SPICERACK_VERSION,
     title: options.title,
     theme: getThemeSetting(options.theme),
     position: getPositionSetting(options.position),
