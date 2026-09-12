@@ -36,8 +36,10 @@ const config = [
     value: 0,
     min: 0,
     max: 1,
-    step: .01
-  }
+    step: .01,
+    onchange: () => { console.log('changed') }
+  },
+  { type: 'button', label: 'Click Me', onclick: () => { console.log('clicked') } }
   // { 
   //   type: 'folder',
   //   label: 'Strings',
@@ -125,7 +127,7 @@ const config = [
   //     'Southwest'
   //   ]
   // },
-  // { type: 'button', label: 'Click Me' }
+
 ];
 
 const gui = createSpicerack(config, { 

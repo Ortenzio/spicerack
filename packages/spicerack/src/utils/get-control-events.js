@@ -1,8 +1,8 @@
+// this isn't needed because vue handles it automatically
+
 export function getControlEvents (control) {
   // todo
 }
-
-
 
 // function handleEvent (type, item, value, event) {
 //   const handler = item[`on${capitalize(type)}`];
